@@ -33,9 +33,13 @@ export default function Root() {
 
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
-    let currentItems = items.slice(firstPostIndex,lastPostIndex);
+    const [countItems, setCountItems] = useState(1);
+    let currentItems = [];
 
-
+    if(items){
+      currentItems = items.slice(firstPostIndex,lastPostIndex);
+      setCountItems(items.length)
+    }
     
 
 
@@ -52,7 +56,9 @@ export default function Root() {
     useEffect(() => {
       console.log(search);
       UserGet();
-      currentItems = items.slice(firstPostIndex,lastPostIndex);
+      if(items){
+        currentItems = items.slice(firstPostIndex,lastPostIndex);
+      }
       console.log(currentItems);
     }, [search, start, limit]);
 
@@ -149,7 +155,7 @@ export default function Root() {
             </Table>
           </TableContainer>
           <Box display="flex" justifyContent="center" sx={{ pt:2 }}>
-            <MyPagination totalPosts={items.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} ></MyPagination>
+            <MyPagination totalPosts={countItems} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} ></MyPagination>
 
           </Box>
         </Paper>
