@@ -1,0 +1,29 @@
+version: "3.4"
+
+services:
+  mongo:
+    image: mongo:5
+    volumes:
+      - ./mongo/config:/data/configdb
+      - ./mongo/data:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    networks:
+      - default
+  koa:
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - mongo
+    networks:
+      - default
+networks:
+  default:
