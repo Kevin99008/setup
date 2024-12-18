@@ -1,0 +1,63 @@
+/* css/Navbar.css */
+
+.navbar {
+  background-color: #ffffff; /* Light gray background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  padding: 1rem; /* Padding inside the navbar */
+  width: 80%; /* Set a specific width for the navbar */
+  max-width: 1000px; /* Optional: Maximum width for larger screens */
+  position: fixed; /* Fixes the navbar at the top */
+  top: 20px; /* Move down from the top */
+  left: 50%; /* Centers it horizontally */
+  transform: translateX(-50%); /* Adjusts for centering */
+  z-index: 1000; /* Ensures it stays above other content */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between left and right sections */
+}
+
+.navbar-left ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Use flexbox to align items horizontally */
+}
+
+.navbar-left ul li {
+  margin-right: 20px; /* Margin between items */
+  padding: 10px 15px; /* Padding around link text */
+}
+
+.navbar-left ul li:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+
+.navbar-right {
+  display: flex; /* Align items in right section horizontally */
+}
+
+.navbar-right a,
+.navbar-left ul li a { /* Apply styles to both left and right links */
+  color: #007bff; /* Bright blue color for links */
+  text-decoration: none;
+  font-weight: bold; /* Bold text for links */
+  padding: 10px 15px; /* Padding around link text */
+  border-radius: 5px; /* Rounded corners on links */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition effects */
+}
+
+/* Specific styling for the Login button */
+.navbar-right a {
+  background-color: #ff9800; /* Orange tone for Login button */
+  color: white; /* White text color for better contrast */
+}
+
+.navbar-right a:hover {
+  background-color: #e68900; /* Darker orange on hover for Login button */
+}
+
+.navbar-left ul li a:hover { /* Hover effects for left section links */
+  background-color: #007bff; /* Change background on hover for other links */
+  color: white; /* Change text color on hover for other links */
+  transform: scale(1.05); /* Slightly enlarge link on hover for other links */
+}

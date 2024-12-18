@@ -1,0 +1,24 @@
+/* css/Home.css */
+
+.home-container {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text alignment */
+}
+
+.title {
+    font-size: 4rem; /* Make the font size larger */
+    color: white; /* Change text color to white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+    margin: 0; /* Remove default margin */
+}
+
+.description {
+    margin-top: 20px; /* Space above the description */
+    max-width: 600px; /* Optional: Limit width for readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+    color: white; /* Change description text color to white */
+}

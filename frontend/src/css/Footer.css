@@ -1,0 +1,45 @@
+/* css/Footer.css */
+
+.footer {
+    background-color: #f0f8ff; /* Light blue background */
+    padding: 20px; /* Padding around the footer */
+    text-align: center; /* Center align text */
+    border-top: 1px solid #ccc; /* Top border for separation */
+}
+
+.footer-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-around; /* Space out sections */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.footer-section {
+    margin: 10px; /* Margin around sections */
+}
+
+.footer-section h4 {
+    margin-bottom: 10px; /* Space below headings */
+}
+
+.social-media {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.social-media li {
+    display: inline; /* Display links inline */
+    margin-right: 15px; /* Space between social links */
+}
+
+.social-media a {
+    text-decoration: none; /* Remove underline from links */
+    color: #007bff; /* Link color */
+}
+
+.social-media a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer-bottom {
+    margin-top: 20px; /* Space above bottom text */
+}

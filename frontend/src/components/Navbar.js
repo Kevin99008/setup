@@ -1,23 +1,27 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Button, Typography } from '@mui/material';
+// components/Navbar.js
 
-export default function Navbar() {
-  const HomePage = () => {
-    window.location = '/'
-  }
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../css/Navbar.css'; // Updated import path for CSS
+
+const Navbar = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          
-          <Button onClick={()=> HomePage()} color="inherit">Home</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <nav className="navbar">
+      <div className="navbar-left">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+      </div>
+      <div className="navbar-right">
+        <Link to="/login">Login</Link> {/* Add Login link */}
+      </div>
+    </nav>
   );
-}
+};
+
+export default Navbar;

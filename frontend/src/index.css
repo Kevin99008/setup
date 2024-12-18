@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app-container {
+  background: linear-gradient(to right, lightblue, rgb(250, 232, 199)); /* Gradient background */
+  min-height: 100vh; /* Ensure it covers full height */
+  display: flex;
+  flex-direction: column;
+}
