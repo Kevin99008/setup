@@ -8,7 +8,9 @@ import NotFound from './components/NotFound';
 import Login from './components/Login'; // Import the Login component
 import Footer from './components/Footer'; // Import the Footer component
 import MainPage from './components/MainPage'; // Import the Main Page component
+import Certificate from './components/Certificate'; // Import the Certificate Page component
 import Navbar from './components/Navbar'; // Import the combined Navbar component
+import { AuthProvider } from './context/AuthContext'; // Import AuthProvider
 
 const App = () => {
   const location = useLocation(); // Get the current location
@@ -24,6 +26,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} /> {/* Add route for Login */}
           <Route path="/main" element={<MainPage />} /> {/* Add route for Main Page */}
+          <Route path="/certificates" element={<Certificate />} /> {/* Add route for Certificates Page */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
@@ -33,10 +36,12 @@ const App = () => {
   );
 };
 
-// Wrap App with Router in index.js
+// Wrap App with Router and AuthProvider in index.js
 const AppWrapper = () => (
   <Router>
-    <App />
+    <AuthProvider> {/* Wrap App with AuthProvider */}
+      <App />
+    </AuthProvider>
   </Router>
 );
 

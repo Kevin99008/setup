@@ -1,20 +1,18 @@
 // components/Navbar.js
 
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext'; // Import the useAuth hook
 import '../css/Navbar.css'; // Import CSS for styling
 
 const Navbar = () => {
-  const [loggedIn, setLoggedIn] = useState(true);
-  const [username, setUsername] = useState('');
+  const { loggedIn, logout } = useAuth(); // Get loggedIn state and logout function
+  const navigate = useNavigate(); // Hook for navigation
 
-  useEffect(() => {
-    const isLoggedIn = localStorage.getItem("loggedIn") === "true";
-    setLoggedIn(isLoggedIn);
-    if (isLoggedIn) {
-      setUsername(localStorage.getItem("username")); // Get username from local storage
-    }
-  }, []);
+  const handleLogout = () => {
+    logout(); // Call logout function from context
+    navigate('/'); // Redirect to Home.js after logging out
+  };
 
   return (
     <nav className="navbar">
@@ -23,10 +21,10 @@ const Navbar = () => {
           {loggedIn ? (
             <>
               <li>
-                <Link to="/my-courses">My Courses</Link>
+                <Link to="/main">My Courses</Link> {/* Link to Main Page */}
               </li>
               <li>
-                <Link to="/my-certificates">My Certificates</Link>
+                <Link to="/certificates">My Certificates</Link> {/* Link to Certificates Page */}
               </li>
             </>
           ) : (
@@ -43,10 +41,10 @@ const Navbar = () => {
       </div>
       <div className="navbar-right">
         {loggedIn ? (
-          <div className="user-info">
-            <img src="path/to/user-icon.png" alt="User Icon" className="user-icon" /> {/* Replace with actual icon path */}
-            <span>{username}</span> {/* Display username */}
-          </div>
+          <>
+            <span>{localStorage.getItem("username")}</span> {/* Display username */}
+            <button onClick={handleLogout} className="logout-button">Logout</button> {/* Logout button */}
+          </>
         ) : (
           <Link to="/login">Login</Link> // Display Login link for other pages
         )}

@@ -1,7 +1,5 @@
-/* css/Navbar.css */
-
 .navbar {
-    background-color: #f0f8ff; /* Light blue background */
+    background-color: #ffffff; /* Light blue background */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
     padding: 1rem; /* Padding inside the navbar */
@@ -33,7 +31,7 @@
 
 .navbar-left ul li a,
 .navbar-right a { 
-    color: #007bff; /* Bright blue color for links */
+    color: #419dff; /* Bright blue color for links */
     text-decoration: none;
     font-weight: bold; /* Bold text for links */
     padding: 10px 15px; /* Padding around link text (same for both sides) */
@@ -56,6 +54,22 @@
     height: 40px; /* Set icon size */
     border-radius: 50%; /* Make it circular */
     margin-right: 10px; /* Space between icon and text */
+}
+
+/* Logout button styles */
+
+.logout-button {
+    padding: 10px;
+    border: none;
+    background-color: #ff9800; /* Orange background for logout button */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px; /* Add gap between username and logout button */
+}
+
+.logout-button:hover {
+    background-color: #e68900; /* Darker orange on hover for logout button */
 }
 
 /* Hover effects for both sides */

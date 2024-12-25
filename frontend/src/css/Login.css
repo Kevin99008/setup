@@ -1,16 +1,28 @@
 /* css/Login.css */
 
+body {
+    margin: 0; /* Remove default body margin */
+    font-family: Arial, sans-serif; /* Set a default font */
+    background-color: #282c34; /* Background color for the page */
+}
+
 .login-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     height: 100vh; /* Full height of the viewport */
 }
 
+.login-box {
+    background-color: white; /* White background for the login box */
+    padding: 20px; /* Padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    width: 300px; /* Fixed width for the login box */
+}
+
 .login-title {
-    color: white; /* White text color for the title */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+    color: #333; /* Dark text color for better contrast */
     margin-bottom: 20px; /* Space below the heading */
 }
 
@@ -21,13 +33,13 @@
 label {
     display: block; /* Make label block-level */
     margin-bottom: 5px; /* Space below label */
-    color: white; /* White text color for labels */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+    color: #333; /* Dark text color for labels */
 }
 
 input {
     padding: 10px; /* Padding inside input fields */
-    width: 300px; /* Fixed width for input fields */
+    width: calc(100% - 22px); /* Full width minus padding and border (adjust as necessary) */
+    max-width: 100%; /* Ensure it doesn't exceed the container's width */
     border: 1px solid #ccc; /* Border style */
     border-radius: 5px; /* Rounded corners */
 }
